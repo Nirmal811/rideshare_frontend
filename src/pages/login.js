@@ -3,6 +3,7 @@ import { Form, Button, Alert } from "react-bootstrap";
 import "./login.css";
 import Logo from "../logo192.png";
 import { login } from "../api/auth-api";
+import Navbar from "../components/Navbar";
 
 const Login = () => {
   const [inputUsername, setInputUsername] = useState("");
@@ -54,7 +55,15 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div style={{ 
+      backgroundColor: '#f4f4f9', 
+      minHeight: '100vh', 
+      display: 'flex', 
+      flexDirection: 'column' 
+      }}>
+      <div>
+      <Navbar />
+      </div>
     <div className="sign-in__wrapper" style={{backgroundColor:'#2d2d18'}}>
       {/* Overlay */}
       <div className="sign-in__backdrop"></div>
@@ -129,10 +138,10 @@ const Login = () => {
       </Form>
       {/* Footer */}
       <div className="w-100 mb-2 position-absolute bottom-0 start-50 translate-middle-x text-white text-center">
-        Made by Nirmal K | &copy;2024
+        Made by Nirmal & Karthik | &copy;2024
       </div>
     </div>
-    </>
+    </div>
   );
 };
 
